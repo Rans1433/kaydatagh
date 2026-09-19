@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+  <link rel="stylesheet" href="main.css">
+  
+</head>
+
+<body>
+  
+  <nav>
+    
+    <div class="logo">
+      <h1>Kay's<span>Data</span>GH</h1>
+    </div>
+    
+    <div class="nav-btns">
+      
+      <button class="btn hover" onclick="show('home')">Home</button>
+      <button class="btn" onclick="show('orders')">Orders</button>
+      <button class="btn" onclick="show('comments')">Comments</button>
+      
+    </div>
+    
+  </nav>
+  
+  <div class="page active" id="home">
+    
+    <div class="text-image">
+      
+      <div class="text">
+        
+         <h1>BUY MTN<br> <span>DATA BUNDLES</span></h1>
+         
+         <h4>fast<span>*</span>simple<span>*</span>affordable</h4>
+         
+         <p>Buy your MTN data bundles instantly and stay connected everywhere</p>
+         
+         <button> Bundles -></button>
+        
+      </div>
+      
+      <div class="image">
+         <img src="image.png" height="300">
+      </div>
+      
+    </div>
+    
+    <div class="cards-page">
+      
+      <span>_________________ MTN DATA BUNDLES __________________</span>
+      
+      <div class="cards" id="bundle-cards"></div>
+      
+    </div>
+    
+  
+  </div>
+  
+  
+  <div class="page" id="paymentpage">
+    
+    <div class="back-btn">
+    <button onclick="show('home')">↩ Back</button>
+    </div>
+    <div class="paymentpage">
+    <h1>Payment page</h1>
+    
+    <span>_____________________ MTN DATA BUNDLE __________________</span>
+    
+    <div class="input-box">
+      <label>Recipient number</label><br>
+      <input type="tel" id="number" placeholder="+233 00 000 0000">
+    </div>
+    
+    <div class="input-box">
+      <label>Email</label><br>
+      <input type="email" id="email" placeholder="kay@gmail.com">
+      
+    </div>
+    
+    <div class="price-amount">
+      
+      <h3>Size:   <span id="cardamount"></span></h3>
+      
+      <h3>price:   GHS<span id="cardprice"></span>.00</h3>
+      
+    </div>
+    
+    <div class="btn">
+      <button onclick="buybundle()">Process Payment</button>
+    </div>
+    
+    
+    </div>
+    
+  </div>
+  
+  <div class="page" id="comments">
+    <h1>__________ COMMENTS __________</h1>
+  
+    
+    <div class="comments-page">
+      
+        
+      <div class="comment-container">
+        
+        <h2>----- Post a comment -----</h2>
+        <p>Share your experience with us</p>
+        
+        <div class="comment-input-box">
+          <input type="text" id="name" placeholder="Please enter your name">
+        </div>
+        
+        <div class="comment-box">
+          <textarea id="comment" placeholder="Please enter your comment here........"></textarea>
+        </div>
+        <div class="btn">
+        
+        <button onclick="addcomment()">Post Comment</button>
+        </div>
+      </div>
+      
+      <div class="comment-p">
+      
+      <div id="commentsdisplayed"></div>
+      
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="page" id="orders">
+    
+    <h1>------ ORDERS ------</h1>
+    
+    <div class="orders-container" id="ordersdisplayed">
+      
+      
+    </div>
+    
+  </div>
+
+    <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <h2>Kay's<span>Data</span>GH</h2>
+        <p>
+          Fast, simple and affordable MTN data bundles.
+          Stay connected wherever you go.
+        </p>
+      </div>
+
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+
+        <button onclick="show('home')">Home</button>
+        <button onclick="show('orders')">Orders</button>
+        <button onclick="show('comments')">Comments</button>
+      </div>
+
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+
+        <p>WhatsApp</p>
+        <a href="https://wa.me/233538721561" target="_blank">
+          Chat with us
+        </a>
+
+        <p class="footer-location">Ghana</p>
+      </div>
+
+    </div>
+
+
+    <div class="footer-line"></div>
+
+
+    <div class="footer-bottom">
+      <p>© 2026 Kay'sDataGH. All rights reserved.</p>
+
+      <p>Fast <span>*</span> Simple <span>*</span> Affordable</p>
+    </div>
+
+  </footer>
+  
+  
+  
+  <script src="main.js"></script>
+</body>
+
+</html>
