@@ -661,3 +661,161 @@ nav .nav-bar{
   }
 
 }
+
+
+.privacy-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.privacy-container h1 {
+  color: #ffbb00;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.privacy-container h2 {
+  color: #ffbb00;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.privacy-container p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.privacy-container ul {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.privacy-container li {
+  margin-bottom: 8px;
+}
+
+.effective-date,
+.last-updated {
+  text-align: center;
+  color: #aaa;
+}
+
+.last-updated {
+  margin-top: 35px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+  
+ 
+  
+.privacy-link {
+  background: none;
+  border: none;
+  color: #ffbb00;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+
+.legal-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px 25px;
+  background: #111;
+  color: #f5f5f5;
+  border-radius: 10px;
+  line-height: 1.7;
+}
+
+.legal-container h1 {
+  color: #ffbb00;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 32px;
+}
+
+.legal-container h2 {
+  color: #ffbb00;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.legal-container p {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.legal-container ul {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.legal-container li {
+  margin-bottom: 8px;
+}
+
+.last-updated {
+  text-align: center;
+  color: #aaa;
+  font-size: 13px !important;
+  margin-bottom: 30px;
+}
+
+.legal-container a {
+  color: #ffbb00;
+  text-decoration: none;
+}
+
+.legal-container a:hover {
+  text-decoration: underline;
+}
+
+.terms-contact {
+  background: #1c1c1c;
+  border-left: 3px solid #ffbb00;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.terms-footer {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  color: #aaa;
+  font-size: 13px !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  
+  .legal-container {
+    margin: 20px 10px;
+    padding: 22px 18px;
+  }
+  
+  .legal-container h1 {
+    font-size: 27px;
+  }
+  
+  .legal-container h2 {
+    font-size: 19px;
+  }
+  
+  .legal-container p,
+  .legal-container li {
+    font-size: 14px;
+  }
+}
+  
