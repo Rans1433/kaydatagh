@@ -818,4 +818,107 @@ nav .nav-bar{
     font-size: 14px;
   }
 }
+
+/* =========================
+   ABOUT US
+========================= */
+
+.about-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #111;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+.about-section h2 {
+  text-align: center;
+  color: #ffbb00;
+  margin-bottom: 25px;
+}
+
+.about-section p {
+  color: #f1f1f1;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.about-contact {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.about-contact h3 {
+  color: #ffbb00;
+  margin-bottom: 10px;
+}
+
+.about-contact a {
+  color: #ffbb00;
+  text-decoration: none;
+}
+
+.about-contact a:hover {
+  text-decoration: underline;
+}
+
+.whatsapp-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid #ffbb00;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  background: #ffbb00;
+  color: #000 !important;
+}
+
+
+/* =========================
+   ABOUT US MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .about-section {
+    margin: 25px 12px;
+    padding: 22px 18px;
+  }
+
+  .about-section h2 {
+    font-size: 25px;
+  }
+
+  .about-section p {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================
+   NAVIGATION MOBILE FIX
+========================= */
+
+@media (max-width: 700px) {
+
+  .nav-btns {
+    width: 100%;
+    gap: 0.2rem;
+    margin-right: 0;
+  }
+
+  .nav-btns button {
+    width: auto;
+    flex: 1;
+    font-size: 0.78rem;
+    padding: 0 3px;
+  }
+
+}
   
