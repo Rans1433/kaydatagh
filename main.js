@@ -243,7 +243,7 @@ console.log("Phone:", num);
   
   paystack.newTransaction({
     
-    key: "pk_test_ce82e97bdedd256846b71305ba244718386f899f",
+    key: "pk_live_451de0b07e5f1d06b51823b071428b1bcd4d2245",
     
     email: email,
     
