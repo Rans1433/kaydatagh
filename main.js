@@ -138,79 +138,9 @@ function displayorder() {
 
 displayorder()
 
-const comments = JSON.parse(localStorage.getItem("comment")) || []
-
-display()
 
 
 
-function  addcomment(){
-  
-  const confirmpost = confirm("are sure to post this comment")
-  
-  if(!confirmpost){
-    return;
-  }
-  
-  const name = document.getElementById("name").value.trim()
-  const comment = document.getElementById("comment").value.trim()
-  
-  if(!name || !comment){
-    alert("please enter name or comment")
-    return;
-  }
-  
-  const now = new Date()
-  
-  comments.push( {
-    name:name,
-    comment:comment,
-    time:now.toLocaleTimeString(),
-    date:now.toLocaleDateString()
-  } )
-  
-  document.getElementById("name").value=""
-  document.getElementById("comment").value=""
-  
-  display()
-  save()
- 
- 
- 
-}
-
-
-
-
-function display(){
-  
-  const displaycomment = document.getElementById("commentsdisplayed")
-  
-  displaycomment.innerHTML = ''
-  
-  comments.forEach((comment, index) => {
-    
-    displaycomment.innerHTML += `
-    
-    <div class="comment">
-    
-    <h3>${comment.name}</h3>
-    
-    <p>${comment.comment}</p>
-    
-    <button onclick="deletecomment('${index}')">delete</button><br>
-    
-    <span>------ ${comment.date} - ${comment.time} -----</span>
-    
-    
-    </div>
-    
-    `
-  } )
-  
-  
-}
-  
   
   function buybundle() {
   
@@ -334,16 +264,6 @@ console.log("Phone:", num);
   
   
 
-
-function deletecomment(index){
-  comments.splice(index, 1)
-  display()
-  save()
-}
-
-function  save(){
-  localStorage.setItem("comment", JSON.stringify(comments))
-}
 
 
 
