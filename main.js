@@ -172,24 +172,29 @@ function formatStatus(status) {
 
   return status;
 }
+
 function displayorder() {
 
   orderdisplay.innerHTML = "";
 
   orders.forEach(order => {
-const method = String(
-  order.processingMethod || ""
-).toLowerCase().trim();
 
-let queueName = "Standard Queue";
+    const method = String(
+      order.processingMethod || ""
+    ).toLowerCase().trim();
 
-if (
-  method.includes("fast") ||
-  method.includes("priority")
-) {
-  queueName = "Fast Lane";
-}
+    let queueName = "Assigning Queue...";
 
+    if (method.includes("fast") || method.includes("priority")) {
+      queueName = "Fast Lane";
+    }
+
+    if (
+      method.includes("standard") ||
+      method.includes("normal")
+    ) {
+      queueName = "Standard Queue";
+    }
 
     orderdisplay.innerHTML += `
 
@@ -199,7 +204,7 @@ if (
 
         <p>Recipient: ${order.num}</p>
 
-        <p>Price: GHS ${order.price}.00</p>
+        <p>Price: GHS ${order.price}</p>
 
         <p>Data: ${order.date}</p>
 
@@ -207,13 +212,10 @@ if (
           Status: ${formatStatus(order.status)}
         </p>
 
-
         <div class="my-queue">
-
           <span>
             ${queueName}
           </span>
-
         </div>
 
       </div>
@@ -223,8 +225,6 @@ if (
   });
 
 }
-
-
 displayorder();
 
 
@@ -265,41 +265,63 @@ async function updateOrderStatus(order) {
       result
     );
 
+if (
+  result.status === "success" &&
+  result.data
+) {
 
-    if (
-      result.status === "success" &&
-      result.data
-    ) {
-
-      const newStatus =
-        result.data.orderStatus ||
-        result.data.status ||
-        result.data.order_status;
-
-
-      console.log(
-        "Actual DataMart status:",
-        newStatus
-      );
+  const newStatus =
+    result.data.orderStatus ||
+    result.data.status ||
+    result.data.order_status;
 
 
-      if (newStatus) {
+const newProcessingMethod =
+  result.data.processingMethod ||
+  result.data.processing_method ||
+  result.data.processingMethodName ||
+  result.data.method ||
+  result.data.queue ||
+  result.data.lane;
 
-        order.status =
-          newStatus;
+  console.log(
+    "Actual DataMart status:",
+    newStatus
+  );
 
 
-        localStorage.setItem(
-          "orders",
-          JSON.stringify(orders)
-        );
+  console.log(
+    "Actual DataMart processing method:",
+    newProcessingMethod
+  );
 
 
-        displayorder();
+  if (newStatus) {
 
-      }
+    order.status =
+      newStatus;
 
-    }
+  }
+
+
+  if (newProcessingMethod) {
+
+    order.processingMethod =
+      newProcessingMethod;
+
+  }
+
+
+  localStorage.setItem(
+    "orders",
+    JSON.stringify(orders)
+  );
+
+
+  displayorder();
+
+}
+    
 
   } catch (error) {
 
@@ -514,8 +536,7 @@ function buybundle() {
 
               // Fast or standard
               processingMethod:
-                result.processingMethod ||
-                "standard"
+  result.processingMethod || ""
 
             };
 
