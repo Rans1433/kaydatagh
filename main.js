@@ -154,7 +154,7 @@ function formatStatus(status) {
     cleanStatus.includes("complete") ||
     cleanStatus.includes("success")
   ) {
-    return "Completed";
+    return "Delivered";
   }
 
   if (
