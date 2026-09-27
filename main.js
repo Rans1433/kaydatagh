@@ -183,9 +183,12 @@ function displayorder() {
       order.processingMethod || ""
     ).toLowerCase().trim();
 
-    let queueName = "Assigning Queue...";
+    let queueName = "";
 
-    if (method.includes("fast") || method.includes("priority")) {
+    if (
+      method.includes("fast") ||
+      method.includes("priority")
+    ) {
       queueName = "Fast Lane";
     }
 
@@ -194,6 +197,19 @@ function displayorder() {
       method.includes("normal")
     ) {
       queueName = "Standard Queue";
+    }
+
+    // Only show queue when a queue has actually been assigned
+    let queueHTML = "";
+
+    if (queueName) {
+
+      queueHTML = `
+        <div class="my-queue">
+          <span>${queueName}</span>
+        </div>
+      `;
+
     }
 
     orderdisplay.innerHTML += `
@@ -212,11 +228,7 @@ function displayorder() {
           Status: ${formatStatus(order.status)}
         </p>
 
-        <div class="my-queue">
-          <span>
-            ${queueName}
-          </span>
-        </div>
+        ${queueHTML}
 
       </div>
 
@@ -225,6 +237,8 @@ function displayorder() {
   });
 
 }
+
+
 displayorder();
 
 
