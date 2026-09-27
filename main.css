@@ -268,6 +268,44 @@ nav .nav-bar{
 }
 
 
+
+.delivery-queue {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #111;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.delivery-queue h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.queue-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #181818;
+  border-radius: 5px;
+}
+
+.queue-row span {
+  color: #fff;
+}
+
+.queue-row strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+    
+
 #orders{
   color:#fff;
 }
