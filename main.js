@@ -7,35 +7,35 @@ const mtncards = [
   {
     id: 1,
     amount: "1GB",
-    price: 4.79,
+    price: 4.85,
     validity: "valid for 90 days"
   },
 
   {
     id: 2,
     amount: "2GB",
-    price: 9.6,
+    price: 9.8,
     validity: "valid for 90 days"
   },
 
   {
     id: 3,
     amount: "5GB",
-    price: 23.99,
+    price: 24,
     validity: "valid for 90 days"
   },
 
   {
     id: 4,
     amount: "10GB",
-    price: 48.91,
+    price: 48.99,
     validity: "valid for 90 days"
   },
 
   {
     id: 5,
     amount: "20GB",
-    price: 95.5,
+    price: 98.5,
     validity: "valid for 90 days"
   }
 
