@@ -42,6 +42,18 @@ const mtncards = [
 ];
 
 
+let mtnAvailable = false;
+btn.disabled = false;
+const alertBox = document.getElementById("mtnAlert");
+
+if (!mtnAvailable) {
+    alertBox.style.display = "block";
+   btn.disabled = true;
+} else {
+    alertBox.style.display = "none";
+  btn.disabled = false;
+}
+
 const cards = document.getElementById("bundle-cards");
 
 
@@ -65,7 +77,7 @@ function displaycards() {
 
         <h2>GHS ${card.price}</h2>
 
-        <button
+        <button id="btn"
           onclick="show('paymentpage'); selectcard(${card.id})">
           Buy Now
         </button>
