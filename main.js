@@ -44,26 +44,21 @@ const mtncards = [
 
 let mtnAvailable = false;
 
-const activebtn = document.getElementById("activebtn")
-
-activebtn.disabled = false;
-
 const alertBox = document.getElementById("mtnAlert");
-
-if (!mtnAvailable) {
-    alertBox.style.display = "block";
-   activebtn.disabled = true;
-} else {
-    alertBox.style.display = "none";
-  activebtn.disabled = false;
-}
-
 const cards = document.getElementById("bundle-cards");
 
 
 function displaycards() {
+cards.innerHTML = "";
 
-  cards.innerHTML = "";
+  if (!mtnAvailable) {
+    alertBox.style.display = "block";
+} else {
+    alertBox.style.display = "none";
+}
+
+
+  
 
   mtncards.forEach(card => {
 
@@ -81,7 +76,8 @@ function displaycards() {
 
         <h2>GHS ${card.price}</h2>
 
-        <button id="activebtn"
+        <button 
+         ${!mtnAvailable ? "disabled" : ""}
           onclick="show('paymentpage'); selectcard(${card.id})">
           Buy Now
         </button>
