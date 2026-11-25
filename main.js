@@ -41,6 +41,7 @@ const mtncards = [
 
 ];
 
+const btn = document.getElementById("btn")
 
 let mtnAvailable = false;
 btn.disabled = false;
