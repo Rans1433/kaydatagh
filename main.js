@@ -41,18 +41,21 @@ const mtncards = [
 
 ];
 
-const btn = document.getElementById("btn")
 
 let mtnAvailable = false;
-btn.disabled = false;
+
+const activebtn = document.getElementById("activebtn")
+
+activebtn.disabled = false;
+
 const alertBox = document.getElementById("mtnAlert");
 
 if (!mtnAvailable) {
     alertBox.style.display = "block";
-   btn.disabled = true;
+   activebtn.disabled = true;
 } else {
     alertBox.style.display = "none";
-  btn.disabled = false;
+  activebtn.disabled = false;
 }
 
 const cards = document.getElementById("bundle-cards");
@@ -78,7 +81,7 @@ function displaycards() {
 
         <h2>GHS ${card.price}</h2>
 
-        <button id="btn"
+        <button id="activebtn"
           onclick="show('paymentpage'); selectcard(${card.id})">
           Buy Now
         </button>
